@@ -3,6 +3,17 @@
 - In The `fxmanifest.lua` of `zAdmin` Make Sure Its The Right SQL
 - In The `config.lua` At The Top Put Your Framework. 
 
+**First in the `config.lua` you will need to configure these options! Also anything else in the config!**
+```lua
+    Server = {
+        Name = "Zen Development",
+        Discord = "discord.gg/zdev",
+        Tebex = "zdev.tebex.io",
+        RGB = { 0, 128, 255 }
+    },
+```
+
+
 # Permissions
 ```lua
 Permissions = {
@@ -57,4 +68,31 @@ DiscordLogs = {
     Setjob = 'https://discord.com/api/webhooks/0000000000000000/webhookid',
     PlayerReports = 'https://discord.com/api/webhooks/0000000000000000/webhookid',
 }
+```
+
+# Whitelisting
+- Not all Vehicles, Weapons, Items can be spawned/given. Only whitelisted ones!
+
+**Below You Can See How Simple It Is To Setup!**
+```lua
+    Whitelisted = { 
+        Weapons = {
+            {label = 'AP Pistol', spawncode = 'weapon_appistol'},
+            {label = 'Combat Pistol', spawncode = 'weapon_combatpistol'},
+            {label = 'Special Carbine', spawncode = 'weapon_specialcarbine'},
+            {label = 'Switch Blade', spawncode = 'weapon_switchblade'}
+        },
+
+        Items = {
+            {label = 'Armour', item = 'armour'},
+            {label = 'MedKit', item = 'medkit'},
+            {label = 'Repair Kit', item = 'repairkit'}
+        },
+
+        Vehicles = {
+            {label = 'Manchez', spawncode = 'manchez'},
+            {label = 'Blista', spawncode = 'blista'},
+            {label = 'Hydra', spawncode = 'hydra'}
+        },
+    },
 ```
